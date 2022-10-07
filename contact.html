@@ -1,0 +1,138 @@
+                     
+  <!DOCTYPE html>
+  <html>
+      <head>
+         <link rel="stylesheet" href="style.css">
+         <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
+         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.2/css/fontawesome.min.css">
+         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.2/css/fontawesome.min.css">   
+      </head>
+  
+      <body>
+         <header id="sub-header">
+            <nav>
+            <ul>
+               <li><a href="index.html">HOME</a></li>
+               <li ><a href="about.html">ABOUT US</a>
+               <div class="sub-menu-1">
+                  <ul>
+                     <li><a href="about.html">Mission</a></li>
+                     <li><a href="about.html">Vision</a></li>
+                     <li><a href="about.html">Team</a></li>
+                  </ul> 
+
+               </div>
+               
+               </li>
+               <li><a href="services.html">SERVICES</a>
+                  <div class="sub-menu-2">
+                 <ul>
+                  <li class="hoover "><a href="services.html">Computer Studies</a><i class="fa fa-angle-right"></i>
+                  <div class="sub-menu-4">
+                      <ul>
+                        <li>Web Development</li>
+                        <li>Computer Packages</li>
+                        <li>Diploma in ict</li>
+                      </ul>
+                  </div>
+                  
+                  </li>
+                  <li class="hoover"><a href="services.html">Security Systems</a><i class="fa fa-angle-right"></i>
+                  <div class="sub-menu-4">
+                     <ul>
+                        <li>Electric Fence Installation and Training</li>
+                        <li>Cctv Intallation & Training</li>
+                        <li>Tracking Systems</li>
+
+                     </ul>
+                  </div>
+                  
+                  </li>
+                  <li><a href="services.html">Hardware Maintanance</a></li>
+                   
+                 </ul>
+                 </div>
+               
+               </li>
+               <li><a href="price.html">PLANS</a></li>
+               <li class="active"> <a href="contact.html">CONTACT</a></li>
+               
+            </ul>
+
+         </nav>
+           <div class="text-box-1">
+            <h1>CONTACT US</h1>
+       
+           </div>
+          </header>
+
+          <div class="contact">
+            <div class="container">
+               <div class="rowe">
+                  <div class="contact-lefti">
+                     <h1 class="sub-t">Contact Me</h1>
+
+                     <p><i class="fas fa-phone-square-alt"></i>0720454139</p>
+                     <p><i class="fas fa-phone-square-alt"></i>0722514814</p>
+                     <p><i class="fas fa-phone-square-alt"></i>0722462731</p>
+
+                  </div>
+                   
+                  <div class="contact-righti">
+                       <form name ="submit-to-google-sheet">
+                        <h3>GET IN TOUCH</h3>
+                        <input type="text" id="Name" placeholder="Your Name" required>
+                        <input type="text" id="Email" placeholder="Your Email" required>
+                        <input type="text" id="Phone" placeholder="Your Phone" required>
+                         <textarea name="Message" rows="6" placeholder="your message"></textarea>
+
+                         <button type="submit"class="btn">Submit</button>
+                       </form>
+                       <span id = "msg">Message Sent Successfully</span>
+
+                  </div>
+               </div>
+               <a href="images/kenya.pdf" download class="reg">DOWNLOAD REGISTRATION FORM</a>
+
+            </div>
+
+
+          </div>
+
+          
+          <section class="footer">
+
+            <h4>About Us</h4>
+            <p>We are located @ Genesis Building</p>
+            <p>EXAMS KNEC AND C.S.K</p>
+            <p>REGISTRATION ON PROGRESS</p>
+
+          </section>
+          
+          
+          
+     
+
+      <script>
+      const scriptURL ='https://script.google.com/macros/s/AKfycbwLzk2YVCJPppTmgl9lhY8XvfhY2PzS_FmUnHS3PThuj5XtamqbsGQqOJ3_DM28q3OQ/exec'
+         const form = document.forms['submit-to-google-sheet']
+         const msg = document.getElementById("msg")
+         
+         form.addEventListener('submit', e => {
+           e.preventDefault()
+           fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+             .then(response => {
+               msg.innerHTML="Message Sent Successfully"
+               setTimeout(function(){
+                 msg.innerHTML= ""
+               }, 5000)
+               form.reset()
+             })
+             .catch(error => console.error('Error!', error.message))
+         })
+         
+         
+         </script>
+         </body>
+  </html>
+
